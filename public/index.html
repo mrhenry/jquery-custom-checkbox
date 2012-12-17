@@ -14,8 +14,8 @@
       cursor: pointer;
     }
 
-    .example-1 {
-      border-bottom: 1px solid #EEEEEE;
+    .example-1,
+    .example-2 {
       border-top: 1px solid #EEEEEE;
       padding: 20px 0;
       position: relative;
@@ -39,6 +39,28 @@
       position: absolute;
       top: -7px;
     }
+
+    .example-2 .fake-checkbox {
+      display: block;
+      float: left;
+      height: 20px;
+      margin: 0 7px 0 0;
+      width: 20px;
+    }
+
+    .example-2 .fake-checkbox:before {
+      color: red;
+      content: "☹";
+      font-size: 30px;
+      left: 2px;
+      top: -7px;
+    }
+
+    .example-2 .fake-checkbox.checked:before {
+      color: green;
+      content: "☺";
+    }
+
   </style>
 
   <script src="http://www.google.com/jsapi?key="></script>
@@ -56,13 +78,26 @@
 <body>
   <div id="wrapper">
     <h1>jQuery custom checkbox</h1>
+    <p>Design your checkboxes with your own CSS flavour.</p>
 
+    <h2>How to use</h2>
+    <p>
+      You can find the documentation on the Github page:<br/>
+      <a href="https://github.com/mrhenry/jquery-custom-checkbox">https://github.com/mrhenry/jquery-custom-checkbox</a>
+    <h2>Examples</h2>
     <div class="example-1">
       <label for="checkbox-1">Custom checkbox</label>
       <input type="checkbox" id="checkbox-1" name="checkbox-1" value="" />
     </div>
+    <div class="example-2">
+      <label for="checkbox-2">Custom checkbox</label>
+      <input type="checkbox" id="checkbox-2" name="checkbox-2" value="" />
+    </div>
 
   </div>
+  <footer>
+    Created by <a href="http://mrhenry.be">Mr. Henry</a>.
+  </footer>
   <a href="https://github.com/mrhenry/jquery-custom-checkbox"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
 
 </body>
