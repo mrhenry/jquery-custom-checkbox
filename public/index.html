@@ -6,13 +6,62 @@
 
   <title>jquery-custom-checkbox demo</title>
 
+  <link rel="stylesheet" href="demo.css" />
+
+  <style type="text/css" media="screen">
+
+    label {
+      cursor: pointer;
+    }
+
+    .example-1 {
+      border-bottom: 1px solid #EEEEEE;
+      border-top: 1px solid #EEEEEE;
+      padding: 20px 0;
+      position: relative;
+      font-size: 20px;
+    }
+
+    .example-1 .fake-checkbox {
+      border: 2px solid #DDDDDD;
+      display: block;
+      float: left;
+      height: 13px;
+      margin: 0 7px 0 0;
+      position: relative;
+      width: 13px;
+    }
+
+    .example-1 .fake-checkbox.checked:before {
+      content: "✔";
+      font-size: 30px;
+      left: 2px;
+      position: absolute;
+      top: -7px;
+    }
+  </style>
+
   <script src="http://www.google.com/jsapi?key="></script>
   <script>
     google.load("jquery", "1");
   </script>
   <script src="jquery-custom-checkbox-min.js"></script>
+
+  <script>
+    $(function() {
+      $('input[type=checkbox]').customcheckbox();
+    });
+  </script>
 </head>
 <body>
+  <div id="wrapper">
+    <h1>jQuery custom checkbox</h1>
 
+    <div class="example-1">
+      <label for="checkbox-1">Custom checkbox</label>
+      <input type="checkbox" id="checkbox-1" name="checkbox-1" value="" />
+    </div>
+
+  </div>
 </body>
 </html>
