@@ -2,7 +2,7 @@
  * jquery-custom-checkbox
  *
  * Created at: 2012-12-17 15:53:56 +0100
- * Updated at: 2012-12-17 15:54:42 +0100
+ * Updated at: 2012-12-17 16:17:57 +0100
  *
  * Author: Yves Van Broekhoven
  * Version: 1.0.0
