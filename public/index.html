@@ -15,7 +15,8 @@
     }
 
     .example-1,
-    .example-2 {
+    .example-2,
+    .example-3 {
       border-top: 1px solid #EEEEEE;
       padding: 20px 0;
       position: relative;
@@ -61,6 +62,25 @@
       content: "☺";
     }
 
+    .example-3 .fake-checkbox {
+      border: 1px solid #000000;
+      border-radius: 50%;
+      display: block;
+      float: left;
+      height: 13px;
+      margin: 0 7px 0 0;
+      position: relative;
+      width: 13px;
+    }
+
+    .example-3 .fake-checkbox.checked:before {
+      content: "✔";
+      font-size: 30px;
+      left: 2px;
+      position: absolute;
+      top: -7px;
+    }
+
   </style>
 
   <script src="http://www.google.com/jsapi?key="></script>
@@ -71,7 +91,7 @@
 
   <script>
     $(function() {
-      $('input[type=checkbox]').customcheckbox();
+      $('input[type=checkbox], input[type=radio]').customcheckbox();
     });
   </script>
 </head>
@@ -87,11 +107,21 @@
     <h2>Examples</h2>
     <div class="example-1">
       <label for="checkbox-1">Custom checkbox</label>
-      <input type="checkbox" id="checkbox-1" name="checkbox-1" value="" />
+      <input type="checkbox" id="checkbox-1" name="checkbox_group[]" value="" />
     </div>
     <div class="example-2">
       <label for="checkbox-2">Custom checkbox</label>
-      <input type="checkbox" id="checkbox-2" name="checkbox-2" value="" />
+      <input type="checkbox" id="checkbox-2" name="checkbox_group[]" value="" />
+    </div>
+    <div class="example-3">
+      <label for="radio-3">Custom radio button</label>
+      <input type="radio" id="radio-3" name="radio_group[]" value="" />
+      <br />
+      <label for="radio-4">Custom radio button</label>
+      <input type="radio" id="radio-4" name="radio_group[]" value="" />
+      <br />
+      <label for="radio-5">Custom radio button</label>
+      <input type="radio" id="radio-5" name="radio_group[]" value="" />
     </div>
 
   </div>
