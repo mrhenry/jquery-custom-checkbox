@@ -5,7 +5,7 @@
  * Updated at: 2013-06-26 16:34:38 +0200
  *
  * Author: Yves Van Broekhoven
- * Version: 1.0.0
+ * Version: 1.0.1
  *
  */
 
