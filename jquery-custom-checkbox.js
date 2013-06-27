@@ -7,6 +7,8 @@
  * Author: Yves Van Broekhoven
  * Version: 1.0.2
  *
+ * https://github.com/mrhenry/jquery-custom-checkbox
+ *
  */
 
 /*global jQuery:false*/
