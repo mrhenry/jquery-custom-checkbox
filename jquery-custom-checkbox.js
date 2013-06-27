@@ -5,7 +5,7 @@
  * Updated at: 2013-06-27 12:45:28 +0200
  *
  * Author: Yves Van Broekhoven
- * Version: 1.0.2
+ * Version: 1.0.3
  *
  * https://github.com/mrhenry/jquery-custom-checkbox
  *
