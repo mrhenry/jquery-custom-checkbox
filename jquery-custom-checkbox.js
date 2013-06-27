@@ -2,10 +2,10 @@
  * jquery-custom-checkbox
  *
  * Created at: 2012-12-17 15:53:56 +0100
- * Updated at: 2013-06-26 16:42:06 +0200
+ * Updated at: 2013-06-27 12:45:28 +0200
  *
  * Author: Yves Van Broekhoven
- * Version: 1.0.0
+ * Version: 1.0.2
  *
  */
 
@@ -23,7 +23,7 @@
 
     this.element      = element;
     this.name         = $this.attr('name');
-    this.escaped_name = this.name.replace('[', '\\[').replace(']', '\\]');
+    this.escaped_name = this.name.replace(/\[/g, '\\[').replace(/\]/g, '\\]');
     this.$label       = $this.siblings('label[for='+ $this.attr('id') +']');
     this.$fake        = $('<span class="fake-checkbox"></span>');
     this.$groupling_labels = this.findGrouplingLabels();
