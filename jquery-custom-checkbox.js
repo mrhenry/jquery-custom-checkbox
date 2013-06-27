@@ -17,10 +17,13 @@
   "use strict";
 
 
-  var plugin_name = 'jqueryCustomCheckbox';
+  var plugin_name = 'jqueryCustomCheckbox',
+      defaults    = {
+        'position': 'after'
+      };
 
 
-  function CustomCheckbox( element ) {
+  function CustomCheckbox( element, options ) {
     var $this = $(element);
 
     this.element      = element;
@@ -29,6 +32,8 @@
     this.$label       = $this.siblings('label[for='+ $this.attr('id') +']');
     this.$fake        = $('<span class="fake-checkbox"></span>');
     this.$groupling_labels = this.findGrouplingLabels();
+    this.options      = $.extend({}, defaults, options);
+
     this.init();
   }
 
@@ -40,8 +45,15 @@
     $this.hide();
 
     _this.$label
-      .addClass('custom-checkbox')
-      .append( _this.$fake );
+      .addClass('custom-checkbox');
+
+    if ( _this.options.position === 'before' ) {
+      _this.$label.prepend( _this.$fake );
+
+    } else {
+      _this.$label.prepend( _this.$fake );
+
+    }
 
     _this.setState();
 
@@ -85,9 +97,9 @@
   };
 
 
-  $.fn.customcheckbox = function() {
+  $.fn.customcheckbox = function(options) {
     return this.each( function() {
-      $(this).data( plugin_name, new CustomCheckbox(this) );
+      $(this).data( plugin_name, new CustomCheckbox(this, options) );
     });
   };
 
