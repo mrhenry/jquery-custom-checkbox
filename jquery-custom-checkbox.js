@@ -2,7 +2,7 @@
  * jquery-custom-checkbox
  *
  * Created at: 2012-12-17 15:53:56 +0100
- * Updated at: 2013-06-27 12:45:28 +0200
+ * Updated at: 2013-06-28 16:13:02 +0200
  *
  * Author: Yves Van Broekhoven
  * Version: 1.0.3
@@ -69,14 +69,14 @@
     if ( $this.prop('checked') === true ) {
       this.$fake.addClass('checked');
 
+      // If radio button, uncheck group members
+      if ( $this.attr('type') == 'radio' ) {
+        this.$groupling_labels.find('.fake-checkbox').removeClass('checked');
+      }
+
     } else {
       this.$fake.removeClass('checked');
 
-    }
-
-    // If radio button, uncheck group members
-    if ( $this.attr('type') == 'radio' ) {
-      this.$groupling_labels.find('.fake-checkbox').removeClass('checked');
     }
   };
 
