@@ -2,10 +2,10 @@
  * jquery-custom-checkbox
  *
  * Created at: 2012-12-17 15:53:56 +0100
- * Updated at: 2013-06-28 16:13:02 +0200
+ * Updated at: 2013-11-13 16:04:54 +0100
  *
  * Author: Yves Van Broekhoven
- * Version: 1.0.4
+ * Version: 1.1.0
  *
  * https://github.com/mrhenry/jquery-custom-checkbox
  *
@@ -28,9 +28,10 @@
 
     this.element      = element;
     this.name         = $this.attr('name');
+    this.type         = $this.attr('type');
     this.escaped_name = this.name.replace(/\[/g, '\\[').replace(/\]/g, '\\]');
-    this.$label       = $this.siblings('label[for='+ $this.attr('id') +']');
-    this.$fake        = $('<span class="fake-checkbox"></span>');
+    this.$label       = $('label[for='+ $this.attr('id') +']');
+    this.$fake        = $('<span class="fake-' + this.type + '"></span>');
     this.$groupling_labels = this.findGrouplingLabels();
     this.options      = $.extend({}, defaults, options);
 
@@ -68,16 +69,20 @@
 
     if ( $this.prop('checked') === true ) {
       this.$fake.addClass('checked');
+      this.$label.addClass('checked');
 
       // If radio button, uncheck group members
-      if ( $this.attr('type') == 'radio' ) {
-        this.$groupling_labels.find('.fake-checkbox').removeClass('checked');
+      if ( $this.attr('type') == 'radio' && $ ) {
+        this.$groupling_labels.removeClass('checked');
+        this.$groupling_labels.find('.fake-' + this.type).removeClass('checked');
       }
 
     } else {
       this.$fake.removeClass('checked');
+      this.$label.removeClass('checked');
 
     }
+
   };
 
 
@@ -88,7 +93,7 @@
 
     $options.each(function() {
       var $option = $(this),
-          $label  = $option.siblings('label[for='+ $option.attr('id') +']');
+          $label  = $('label[for='+ $option.attr('id') +']');
 
       $groupling_labels = $groupling_labels.add($label);
     });
